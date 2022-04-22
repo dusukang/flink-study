@@ -1,0 +1,31 @@
+
+/**
+ * @author :xht
+ * @description :
+ * @create :2021-12-20 10:31:00
+ */
+import org.apache.flink.streaming.api.datastream.DataStreamSource;
+import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
+import org.apache.flink.streaming.api.functions.source.SourceFunction;
+import com.ververica.cdc.debezium.JsonDebeziumDeserializationSchema;
+import com.ververica.cdc.connectors.mongodb.MongoDBSource;
+
+
+public class mongocdc {
+    public static void main(String[] args) throws Exception {
+
+        StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+        SourceFunction<String> sourceFunction = MongoDBSource.<String>builder()
+                .hosts("cdh-2:27017")
+                .username("username")
+                .password("password")
+                .database("database")
+                .collection("collection")
+                .deserializer(new JsonDebeziumDeserializationSchema())
+                .build();
+
+        DataStreamSource<String> ds = env.addSource(sourceFunction);
+        ds.print();
+        env.execute();
+    }
+}
