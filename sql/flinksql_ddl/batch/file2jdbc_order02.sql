@@ -5,7 +5,7 @@ CREATE TABLE source_file_order (
     cost DECIMAL(16,2)
 )  WITH (
        'connector'='filesystem',
-       'path'='file:///data/flinksql/batch/order_data.json',
+       'path'='file:///data/com.flink.flinksql/batch/order_data.json',
        'format' = 'json',
        'json.fail-on-missing-field' = 'false',
        'json.ignore-parse-errors' = 'false'

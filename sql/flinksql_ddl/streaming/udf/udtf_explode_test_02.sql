@@ -1,4 +1,4 @@
-CREATE FUNCTION explode AS 'flinksql.udf.ExplodeUDTFFunctionV2';
+CREATE FUNCTION explode AS 'com.flink.flinksql.udf.ExplodeUDTFFunctionV2';
 
 CREATE TABLE source_kafka_pro (
     stu_id bigint,

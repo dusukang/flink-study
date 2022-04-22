@@ -5,7 +5,7 @@ CREATE TABLE source_file_user (
     others STRING
 )  WITH (
    'connector'='filesystem',
-   'path'='file:///data/flinksql/batch/user_data.json',
+   'path'='file:///data/com.flink.flinksql/batch/user_data.json',
    'format' = 'event-json',
    'event-json.others' = 'others'
 );

@@ -1,4 +1,4 @@
-CREATE FUNCTION codeConvertName AS 'flinksql.udf.CountryCodeUDFFunction';
+CREATE FUNCTION codeConvertName AS 'com.flink.flinksql.udf.CountryCodeUDFFunction';
 
 CREATE TABLE source_kafka_country (
     country_code varchar,

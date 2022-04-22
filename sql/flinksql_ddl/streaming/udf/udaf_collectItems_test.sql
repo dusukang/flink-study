@@ -1,4 +1,4 @@
-CREATE FUNCTION connectItems AS 'flinksql.udf.ConnectItemsUDAFFunction';
+CREATE FUNCTION connectItems AS 'com.flink.flinksql.udf.ConnectItemsUDAFFunction';
 
 CREATE TABLE source_kafka_pro (
     stu_id bigint,

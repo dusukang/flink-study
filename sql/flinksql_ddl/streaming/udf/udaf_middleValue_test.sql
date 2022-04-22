@@ -1,4 +1,4 @@
-CREATE FUNCTION middleValue AS 'flinksql.udf.MiddleValueUDAFFunction';
+CREATE FUNCTION middleValue AS 'com.flink.flinksql.udf.MiddleValueUDAFFunction';
 
 CREATE TABLE source_kafka_pro (
     stu_id bigint,

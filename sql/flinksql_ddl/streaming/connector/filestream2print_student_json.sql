@@ -4,7 +4,7 @@ create table source_filestream_student(
     score decimal(10,2)
 ) with (
     'connector' = 'filestream',
-    'filepath' = 'file:///data/flinksql/stream/filestream/json',
+    'filepath' = 'file:///data/com.flink.flinksql/stream/filestream/json',
     'monitor-gap' = '10000', --监控间隔周期
     'is-recursive' = 'true', --是否递归
     'is-datepath' = 'true', --是否是日期格式路径
