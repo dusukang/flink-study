@@ -12,6 +12,7 @@
 5.自定义catalog
 6.flinksql窗口函数测试
 7.flinksql join测试
+8.flinkcdc使用测试
 ```
 
 #### flink dataStream
@@ -22,7 +23,6 @@
 4.自定义sink测试
 5.flink状态使用测试
 6.自定义metrics测试
-7.flinkcdc使用测试
 ```
 
 

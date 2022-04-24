@@ -1,4 +1,4 @@
-package com.flink.flinkstream.flinkcdc;
+package com.flink.flinksql.flinkcdc;
 
 import com.flink.flinkcommon.enums.SqlCommand;
 import com.flink.flinkcommon.execute.ExecuteSql;
@@ -32,8 +32,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-public class FlinkCdcMultyTableSync02 {
-    private static final Logger log = LoggerFactory.getLogger(FlinkCdcMultyTableSync02.class);
+public class FlinkCdcMultiTableSync01 {
+    private static final Logger log = LoggerFactory.getLogger(FlinkCdcMultiTableSync01.class);
     public static void main(String[] args) throws Exception {
         Map<String, RowTypeInfo> tableTypeInformationMap = Maps.newConcurrentMap();
         Arrays.stream(args).forEach(arg -> log.warn(arg));

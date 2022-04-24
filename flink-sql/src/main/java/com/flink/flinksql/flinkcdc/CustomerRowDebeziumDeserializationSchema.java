@@ -1,4 +1,4 @@
-package com.flink.flinkstream.flinkcdc;
+package com.flink.flinksql.flinkcdc;
 
 import com.ververica.cdc.debezium.DebeziumDeserializationSchema;
 import org.apache.flink.api.common.typeinfo.TypeHint;

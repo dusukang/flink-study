@@ -1,0 +1,22 @@
+with (
+  'connector'='hudi',
+  'path'= 'hdfs://127.0.0.1:9000/data/software/hive-2.3.9/warehouse/hudi_test.db/${tableName}',
+  'hoodie.datasource.write.recordkey.field'= '${recordkeyField}',
+  'write.tasks'= '2',
+  'compaction.tasks'= '1',
+  'write.rate.limit'= '4000',
+  'table.type'= 'MERGE_ON_READ',
+  'compaction.async.enabled'= 'true',
+  'compaction.trigger.strategy'= 'num_or_time',
+  'compaction.delta_commits'= '3',
+  'compaction.delta_seconds' = '180',
+  'changelog.enabled'= 'true',
+  'hive_sync.enable'= 'true',
+  'hive_sync.mode'= 'hms',
+  'hive_sync.metastore.uris'= 'thrift://127.0.0.1:9083',
+  'hive_sync.table'= '${tableName}',
+  'hive_sync.db'= 'hudi_test',
+  'hive_sync.username'= '',
+  'hive_sync.password'= '',
+  'hive_sync.support_timestamp'= 'true'
+)

@@ -16,6 +16,7 @@
             <groupId>com.flink</groupId>
             <artifactId>flink-common</artifactId>
             <version>1.0</version>
+<!--            <scope>provided</scope>-->
         </dependency>
 
     </dependencies>
