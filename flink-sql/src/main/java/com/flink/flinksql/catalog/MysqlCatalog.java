@@ -297,7 +297,7 @@ public class MysqlCatalog extends AbstractJdbcCatalog {
             case 9:
                 return DataTypes.TIME(scale);
             case 10:
-                return DataTypes.TIMESTAMP(precision);
+                return DataTypes.TIMESTAMP(scale);
             case 11:
                 return DataTypes.CHAR(precision);
             case 12:
