@@ -7,12 +7,12 @@ create table `order` (
 );
 
 CREATE TABLE `order_product` (
-    order_id int,
-    order_type int,
-    order_name varchar,
-    pro_id int,
+    pro_id bigint,
     pro_name varchar,
     pro_type int,
+    order_id bigint,
+    order_type int,
+    order_name varchar,
     area varchar,
     cost decimal(16,2)
 );
@@ -24,7 +24,7 @@ CREATE TABLE `project` (
 );
 
 CREATE TABLE `student_project` (
-    stu_id int,
+    stu_id bigint,
     stu_name varchar,
     pro_id bigint,
     pro_name varchar,
@@ -33,15 +33,15 @@ CREATE TABLE `student_project` (
 );
 
 CREATE TABLE `user` (
-    uid varchar,
+    uid bigint,
     uname varchar,
     others varchar
 );
 
 CREATE TABLE `user_login_times` (
+    uid bigint,
     window_start timestamp,
     window_end timestamp,
-    uid bigint,
     login_times bigint
 );
 
@@ -55,28 +55,28 @@ CREATE TABLE sink_jdbc_order(
     PRIMARY KEY (order_id) NOT ENFORCED
 )with(
    'connector' = 'jdbc',
-   'url' = 'jdbc:mysql://127.0.0.1:3306/flinksql_test_bak?useSSL=false',
+   'url' = 'jdbc:mysql://127.0.0.1:3306/flinksql_test_bak02?useSSL=false',
    'table-name' = 'order',
    'username' = 'root',
-   'password' = ''
+   'password' = '123456789'
 );
 
 CREATE TABLE sink_jdbc_order_product(
-    order_id int,
-    order_type int,
-    order_name varchar,
-    pro_id int,
+    pro_id bigint,
     pro_name varchar,
     pro_type int,
+    order_id bigint,
+    order_type int,
+    order_name varchar,
     area varchar,
     cost decimal(16,2),
-    PRIMARY KEY (order_id) NOT ENFORCED
+    PRIMARY KEY (pro_id) NOT ENFORCED
 )with(
    'connector' = 'jdbc',
-   'url' = 'jdbc:mysql://127.0.0.1:3306/flinksql_test_bak?useSSL=false',
+   'url' = 'jdbc:mysql://127.0.0.1:3306/flinksql_test_bak02?useSSL=false',
    'table-name' = 'order_product',
    'username' = 'root',
-   'password' = ''
+   'password' = '123456789'
 );
 
 CREATE TABLE sink_jdbc_project(
@@ -86,14 +86,14 @@ CREATE TABLE sink_jdbc_project(
     PRIMARY KEY (pro_id) NOT ENFORCED
 )with(
    'connector' = 'jdbc',
-   'url' = 'jdbc:mysql://127.0.0.1:3306/flinksql_test_bak?useSSL=false',
+   'url' = 'jdbc:mysql://127.0.0.1:3306/flinksql_test_bak02?useSSL=false',
    'table-name' = 'project',
    'username' = 'root',
-   'password' = ''
+   'password' = '123456789'
 );
 
 CREATE TABLE sink_jdbc_student_project(
-    stu_id int,
+    stu_id bigint,
     stu_name varchar,
     pro_id bigint,
     pro_name varchar,
@@ -102,37 +102,37 @@ CREATE TABLE sink_jdbc_student_project(
     PRIMARY KEY (stu_id) NOT ENFORCED
 )with(
    'connector' = 'jdbc',
-   'url' = 'jdbc:mysql://127.0.0.1:3306/flinksql_test_bak?useSSL=false',
+   'url' = 'jdbc:mysql://127.0.0.1:3306/flinksql_test_bak02?useSSL=false',
    'table-name' = 'student_project',
    'username' = 'root',
-   'password' = ''
+   'password' = '123456789'
 );
 
 CREATE TABLE sink_jdbc_user(
-    uid varchar,
+    uid bigint,
     uname varchar,
     others varchar,
     PRIMARY KEY (uid) NOT ENFORCED
 )with(
    'connector' = 'jdbc',
-   'url' = 'jdbc:mysql://127.0.0.1:3306/flinksql_test_bak?useSSL=false',
+   'url' = 'jdbc:mysql://127.0.0.1:3306/flinksql_test_bak02?useSSL=false',
    'table-name' = 'user',
    'username' = 'root',
-   'password' = ''
+   'password' = '123456789'
 );
 
 CREATE TABLE sink_jdbc_user_login_times(
+    uid bigint,
     window_start timestamp,
     window_end timestamp,
-    uid bigint,
     login_times bigint,
     PRIMARY KEY (uid,window_start,window_end) NOT ENFORCED
 )with(
    'connector' = 'jdbc',
-   'url' = 'jdbc:mysql://127.0.0.1:3306/flinksql_test_bak?useSSL=false',
+   'url' = 'jdbc:mysql://127.0.0.1:3306/flinksql_test_bak02?useSSL=false',
    'table-name' = 'user_login_times',
    'username' = 'root',
-   'password' = ''
+   'password' = '123456789'
 );
 
 -- 写入sink表

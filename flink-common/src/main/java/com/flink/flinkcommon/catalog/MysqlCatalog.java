@@ -1,4 +1,4 @@
-package com.flink.flinksql.catalog;
+package com.flink.flinkcommon.catalog;
 
 import org.apache.flink.annotation.Internal;
 import org.apache.flink.connector.jdbc.catalog.AbstractJdbcCatalog;
@@ -244,11 +244,11 @@ public class MysqlCatalog extends AbstractJdbcCatalog {
                 if (mysqlType.equals("VARCHAR")) {
                     var7 = 12;
                 }
-//                break;
-//            case 651290682:
-//                if (mysqlType.equals("MEDIUMINT")) {
-//                    var7 = 13;
-//                }
+                break;
+            case 651290682:
+                if (mysqlType.equals("MEDIUMINT")) {
+                    var7 = 13;
+                }
 //                break;
 //            case 2719805:
 //                if (mysqlType.equals("YEAR")) {
@@ -282,6 +282,7 @@ public class MysqlCatalog extends AbstractJdbcCatalog {
             case 1:
                 return DataTypes.SMALLINT();
             case 2:
+            case 13:
                 return DataTypes.INT();
             case 3:
                 return DataTypes.BIGINT();
@@ -295,7 +296,6 @@ public class MysqlCatalog extends AbstractJdbcCatalog {
                 return DataTypes.DATE();
             case 8:
             case 9:
-                return DataTypes.TIME(scale);
             case 10:
                 return DataTypes.TIMESTAMP(scale);
             case 11:

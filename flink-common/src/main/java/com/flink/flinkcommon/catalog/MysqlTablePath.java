@@ -1,4 +1,4 @@
-package com.flink.flinksql.catalog;
+package com.flink.flinkcommon.catalog;
 
 import java.util.Objects;
 import org.apache.flink.util.Preconditions;

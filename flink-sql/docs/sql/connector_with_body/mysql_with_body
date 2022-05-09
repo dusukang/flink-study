@@ -1,0 +1,7 @@
+with(
+   'connector' = 'jdbc',
+   'url' = 'jdbc:mysql://127.0.0.1:3306/flinksql_test_bak01?useSSL=false',
+   'table-name' = '${tableName}',
+   'username' = 'root',
+   'password' = '123456789'
+)
