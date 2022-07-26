@@ -111,6 +111,10 @@ public class CustomerDataConverter implements CustomConverter<SchemaBuilder, Rel
             ZonedDateTime zonedDateTime = localDateTime.atZone(timestampZoneId).withZoneSameInstant(ZoneId.from(ZoneOffset.UTC));
             return timestampFormatter.format(zonedDateTime.toLocalDateTime());
         }
+        if(input instanceof ZonedDateTime){
+            ZonedDateTime zonedDateTime = ((ZonedDateTime)input).withZoneSameInstant(ZoneId.from(ZoneOffset.ofHours(8)));
+            return timestampFormatter.format(zonedDateTime.toLocalDateTime());
+        }
         return null;
     }
 
